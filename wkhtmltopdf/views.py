@@ -42,7 +42,7 @@ class PDFTemplateResponse(TemplateResponse, PDFResponse):
     """Renders a Template into a PDF using wkhtmltopdf"""
 
     def __init__(self, request, template, context=None,
-                 status=None, content_type=None, current_app=None,
+                 status=None, content_type=None,
                  filename=None, show_content_in_browser=None,
                  header_template=None, footer_template=None,
                  cmd_options=None, *args, **kwargs):
@@ -51,7 +51,6 @@ class PDFTemplateResponse(TemplateResponse, PDFResponse):
                                                   context=context,
                                                   status=status,
                                                   content_type=content_type,
-                                                  current_app=None,
                                                   *args, **kwargs)
         self.set_filename(filename, show_content_in_browser)
 
